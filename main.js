@@ -4,19 +4,22 @@ function add (x, y) {
 function subtract (x, y) {
 	return x-y;
 }
-function sum (array) {
-	return array.reduce((total, current) => total + current, 0);
+function multiply (x, y) {
+	return x*y;
 }
-function multiply (array) {
-	return array.reduce((total, current) => total * current, 1);
+function divide (x, y) {
+	return y == 0 ? "Math ERROR" : x/y;
 }
-
 function operate(result, term, operator){
     switch(operator){
         case '+' :
             return add(result, term);
         case '-':
             return subtract(result, term);
+        case 'X':
+            return multiply(result, term);
+        case '/':
+            return divide(result, term);
         default : 
             break;   
     }
@@ -39,6 +42,8 @@ number.forEach((n) => {
         operators.forEach(o => {
             o.style.setProperty('background', '#9ca1a4');
         })
+
+        console.log(strnum, term, operator, result);
     });
 })
 
@@ -64,5 +69,8 @@ const equals = Array.from(document.querySelectorAll('#eq'));
 equals.forEach((eq) => {
     eq.addEventListener('click', (e)=>{
         //TODO
+        resultHTML.innerHTML = operate(result, Number(strnum), operator);
+        
     });
 })
+
