@@ -6,6 +6,11 @@ html, body{
     font-size: 62.5%;
     -moz-box-sizing: border-box;  
 }
+body{
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 button{
     border: none;
     cursor: pointer;
@@ -42,7 +47,10 @@ button{
     grid-template-columns: auto auto auto auto;
     column-gap: 2em;
     margin-bottom: 2em;
-
+}   
+#operators button{
+    font-size: 4em;
+    font-weight: 700;
 }
 
 #main{
@@ -56,14 +64,18 @@ button{
     column-gap: 2em;
     row-gap: 2em;
     height: 90%;
-
+}
+#numbers .number{
+    font-size: 2.5em;
 }
 #del-ac-eq{
     display: grid;
     grid-template-rows: auto auto auto;
     row-gap: 1em;
-
     height: 90%;
+}
+#del-ac-eq button{
+    font-size: 2.5em;
 }
 #del, #ac{
     background-color: #a77d8b;
